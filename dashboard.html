@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard &mdash; Form 9 Digital Record</title>
+<meta name="description" content="Medical examination record dashboard &mdash; view, approve and reject Form IX statutory medical examination submissions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="assets/img/logo-2.png" alt="">
+        </div>
+        <div class="brand-text">
+          <span class="brand-org">SANDUR GROUP</span>
+          <span class="brand-sub">Statutory Medical Examination &middot; Form&nbsp;9 Digital Record</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="viewing-as-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2 20 5.2V11c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5.2L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div class="viewing-as-text">
+            <small>Viewing as</small>
+            <strong id="doctorNameChip">Admin</strong>
+          </div>
+        </div>
+        <div class="profile-menu" id="profileMenu">
+          <button type="button" class="avatar" id="profileTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Account menu">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <div class="profile-card" id="profileCard" role="menu" hidden>
+            <div class="profile-card-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="profile-card-body">
+              <strong class="profile-card-name">SharePoint Admin</strong>
+              <span class="profile-card-email">sharepointadmin@manipalhospitals.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="nav-bar">
+      <div class="nav-bar-inner">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link" id="homeLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Create Medical Record
+          </a>
+          <a href="dashboard.html" class="nav-link active" id="dashboardLink" aria-current="page">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4.7" cy="6" r="1.2" fill="currentColor"/><circle cx="4.7" cy="12" r="1.2" fill="currentColor"/><circle cx="4.7" cy="18" r="1.2" fill="currentColor"/></svg>
+            Lists
+          </a>
+          <a href="history.html" class="nav-link" id="historyLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Employee History
+          </a>
+        </div>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================= DASHBOARD ============================= -->
+  <main class="dashboard-view">
+
+    <div class="dashboard-head">
+      <div>
+        <h1 class="dashboard-title">Medical Examination Records</h1>
+        <p class="dashboard-subtitle">Statutory Form IX submissions across all Sandur Group mines &amp; units</p>
+      </div>
+      <div class="head-actions">
+        <form class="head-search" id="tableSearch" autocomplete="off" novalidate role="search">
+          <div class="search-field">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input type="text" id="tableSearchInput" placeholder="Search certificate no., employee, mine, status…" aria-label="Search the records table">
+            <button type="button" class="search-clear" id="tableSearchClear" aria-label="Clear search" hidden>&times;</button>
+          </div>
+        </form>
+        <a class="btn btn-primary" href="index.html">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          Add Form 9
+        </a>
+      </div>
+    </div>
+
+    <div class="dashboard-toolbar">
+      <div class="status-tabs" id="statusTabs">
+        <button type="button" class="status-tab active" data-status="All">All <span class="tab-count">0</span></button>
+        <button type="button" class="status-tab" data-status="Draft">Draft <span class="tab-count">0</span></button>
+        <button type="button" class="status-tab" data-status="Pending">Pending <span class="tab-count">0</span></button>
+        <button type="button" class="status-tab" data-status="Approved">Approved <small class="tab-hint">(Eligible to Work in Mines)</small> <span class="tab-count">0</span></button>
+        <button type="button" class="status-tab" data-status="Rejected">Rejected <span class="tab-count">0</span></button>
+      </div>
+      <div class="toolbar-actions">
+        <button type="button" class="btn-outline" id="filterBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Filter
+        </button>
+        <button type="button" class="btn-outline" id="sortBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 4v16M7 4l-3 3M7 4l3 3M17 20V4M17 20l-3-3M17 20l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sort by
+        </button>
+      </div>
+    </div>
+
+    <div class="dtable-wrap">
+      <table class="dtable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Certificate No.</th>
+            <th>Employee</th>
+            <th>Mine / Unit</th>
+            <th>Personnel Type</th>
+            <th>Examination</th>
+            <th>Age</th>
+            <th>Exam Date</th>
+            <th>Days Pending</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="dashTableBody">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-footer">
+      <span id="dashPageInfo">Showing 0 of 0 records</span>
+      <div class="pagination" id="dashPagination"></div>
+    </div>
+
+  </main>
+
+  <div class="site-footer no-print">
+    Copyright &copy; 2026 <span>The SANDUR MANGANESE &amp; IRON ORES LIMITED</span> - ALL RIGHTS RESERVED
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/header.js"></script>
+<script src="assets/js/history-data.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee History &mdash; Form 9 Digital Record</title>
+<meta name="description" content="Search an employee or contractor by Aadhaar or employee number and see their complete multi-year Form IX history with attachments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="assets/img/logo-2.png" alt="">
+        </div>
+        <div class="brand-text">
+          <span class="brand-org">SANDUR GROUP</span>
+          <span class="brand-sub">Statutory Medical Examination &middot; Form&nbsp;9 Digital Record</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="viewing-as-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2 20 5.2V11c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5.2L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div class="viewing-as-text">
+            <small>Viewing as</small>
+            <strong id="doctorNameChip">Admin</strong>
+          </div>
+        </div>
+        <div class="profile-menu" id="profileMenu">
+          <button type="button" class="avatar" id="profileTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Account menu">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <div class="profile-card" id="profileCard" role="menu" hidden>
+            <div class="profile-card-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="profile-card-body">
+              <strong class="profile-card-name">SharePoint Admin</strong>
+              <span class="profile-card-email">sharepointadmin@manipalhospitals.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="nav-bar">
+      <div class="nav-bar-inner">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link" id="homeLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Create Medical Record
+          </a>
+          <a href="dashboard.html" class="nav-link" id="dashboardLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4.7" cy="6" r="1.2" fill="currentColor"/><circle cx="4.7" cy="12" r="1.2" fill="currentColor"/><circle cx="4.7" cy="18" r="1.2" fill="currentColor"/></svg>
+            Lists
+          </a>
+          <a href="history.html" class="nav-link active" id="historyLink" aria-current="page">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Employee History
+          </a>
+        </div>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================= EMPLOYEE HISTORY ============================= -->
+  <main class="dashboard-view history-view">
+
+    <div class="dashboard-head">
+      <div>
+        <h1 class="dashboard-title">Employee History</h1>
+        <p class="dashboard-subtitle">Complete year-wise Form IX history and attachments for employees and contractor personnel</p>
+      </div>
+    </div>
+
+    <form class="search-card" id="searchForm" autocomplete="off" novalidate>
+      <label class="search-label" for="searchInput">Aadhaar number or Employee / Contractor number</label>
+      <div class="search-row">
+        <div class="search-field">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="e.g. 4829 1376 5012  or  EMP-0001  or  CTR-1042" aria-describedby="searchHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+      <p class="search-help" id="searchHelp">Exact match only. A 12-digit number is searched as Aadhaar; anything else as an Employee / Contractor number.</p>
+      <p class="search-error" id="searchError" role="alert" hidden></p>
+    </form>
+
+    <section id="historyResult" aria-live="polite"></section>
+
+  </main>
+
+  <div class="site-footer no-print">
+    Copyright &copy; 2026 <span>The SANDUR MANGANESE &amp; IRON ORES LIMITED</span> - ALL RIGHTS RESERVED
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/header.js"></script>
+<script src="assets/js/history-data.js"></script>
+<script src="assets/js/history.js"></script>
+</body>
+</html>

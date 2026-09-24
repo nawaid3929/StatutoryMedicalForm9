@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 9 &mdash; Statutory Medical Examination | Digital Record</title>
+<meta name="description" content="Digitized Form IX (Report of Medical Examination) for mine employees under Rules 109, 113(1), 119(1) &amp; 142 of the Mines Rules, 1955.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="assets/img/logo-2.png" alt="">
+        </div>
+        <div class="brand-text">
+          <span class="brand-org">SANDUR GROUP</span>
+          <span class="brand-sub">Statutory Medical Examination &middot; Form&nbsp;9 Digital Record</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="viewing-as-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2 20 5.2V11c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5.2L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div class="viewing-as-text">
+            <small>Viewing as</small>
+            <strong id="doctorNameChip">Admin</strong>
+          </div>
+        </div>
+        <div class="profile-menu" id="profileMenu">
+          <button type="button" class="avatar" id="profileTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Account menu">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <div class="profile-card" id="profileCard" role="menu" hidden>
+            <div class="profile-card-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.8" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4.1 3.6-6.8 7.5-6.8s7.5 2.7 7.5 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="profile-card-body">
+              <strong class="profile-card-name">SharePoint Admin</strong>
+              <span class="profile-card-email">sharepointadmin@manipalhospitals.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="nav-bar">
+      <div class="nav-bar-inner">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active" id="homeLink" aria-current="page">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Create Medical Record
+          </a>
+          <a href="dashboard.html" class="nav-link" id="dashboardLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4.7" cy="6" r="1.2" fill="currentColor"/><circle cx="4.7" cy="12" r="1.2" fill="currentColor"/><circle cx="4.7" cy="18" r="1.2" fill="currentColor"/></svg>
+            Lists
+          </a>
+          <a href="history.html" class="nav-link" id="historyLink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Employee History
+          </a>
+        </div>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================= LAYOUT (sidebar + form) ============================= -->
+  <div class="layout">
+
+  <!-- ============================= TAB BAR (sidebar) ============================= -->
+  <nav class="tab-bar no-print" aria-label="Form sections">
+    <button type="button" class="step active" data-step="1">
+      <span class="step-index">1</span>
+      <span class="step-copy"><strong>Certificate</strong><small>Sheet 1</small></span>
+    </button>
+    <button type="button" class="step" data-step="2">
+      <span class="step-index">2</span>
+      <span class="step-copy"><strong>Examining Authority Report</strong><small>Sheet 2</small></span>
+    </button>
+    <button type="button" class="step" data-step="3">
+      <span class="step-index">3</span>
+      <span class="step-copy"><strong>Investigations &amp; Sign-off</strong><small>Sheet 3</small></span>
+    </button>
+  </nav>
+
+  <!-- ============================= MAIN FORM (paper-accurate Form IX) ============================= -->
+  <main class="form-body">
+
+    <!-- ---------- SHEET 1: CERTIFICATE ---------- -->
+    <section class="sheet active paper-sheet" id="sheet1" aria-labelledby="sheet1-title">
+      <div class="paper-form-header">
+        <h1 id="sheet1-title">FORM&ndash; IX</h1>
+        <p>(For mine employees only)</p>
+        <p>[See rule 109, rule 113(1), rule 119(1) and rule 142]</p>
+        <p class="paper-form-title">Report of medical examination</p>
+        <p>(To be issued in triplicate)</p>
+      </div>
+
+      <div class="cert-row">
+      <p class="paper-line">Certificate No. <span class="blank mono" id="certNoInline"></span></p>
+
+      <div class="person-lookup no-print">
+        <label>Personnel type
+          <select id="personnelType">
+            <option value="Employee">Employee</option>
+            <option value="Contractor">Contractor</option>
+          </select>
+        </label>
+        <label>Aadhaar No.
+          <input type="text" id="aadhaarNo" inputmode="numeric" maxlength="14" placeholder="XXXX XXXX XXXX" autocomplete="off">
+        </label>
+        <span class="history-hint" id="historyHint" hidden></span>
+      </div>
+      </div>
+
+      <p class="paper-para">
+        Certified that
+        <span class="pairgroup" data-pair="salutation"><button type="button" data-val="Shri" class="selected">Shri</button>/<button type="button" data-val="Smt.">Smt.</button>/<button type="button" data-val="Miss">Miss</button></span>
+        <input type="text" class="blank xwide" id="fullName" placeholder="employee full name" required><span class="req">*</span> employed as
+        <input type="text" class="blank xwide" id="designation" placeholder="designation"> in
+        <input type="text" class="blank" id="mineName" placeholder="mine name"> mine, Employee number
+        <input type="text" class="blank" id="employeeNo" placeholder="emp. no."> has been examined for an
+        <span class="pairgroup" data-pair="examType"><button type="button" data-val="Initial" class="selected">Initial</button>/<button type="button" data-val="Periodical">Periodical</button></span>
+        Medical Examination. Employee appears to be
+        <input type="number" class="blank narrow" id="age" min="14" max="80" placeholder="age"> years of age. The findings of the examining authority are given in the attached sheet.
+        <br>
+        It is considered that
+        <span class="pairgroup" data-pair="salutation2"><span data-val="Shri" class="selected">Shri</span>/<span data-val="Smt.">Smt.</span>/<span data-val="Miss">Miss</span></span>
+        <span class="blank wide" id="fullName2Echo"></span>
+      </p>
+
+      <div class="clause">
+        <p>
+          <button type="button" class="clause-tag" data-clause="a">a)</button>
+          is medically fit for any employment in mines.
+        </p>
+      </div>
+
+      <div class="clause">
+        <p>
+          <button type="button" class="clause-tag" data-clause="b">b)</button>
+          is suffering from <input type="text" class="blank wide" id="bCondition" placeholder="condition"> and is medically unfit for
+        </p>
+        <ol class="roman">
+          <li><label class="roman-check"><input type="checkbox" name="bUnfitFor" value="i"> i) any employment in mine; or</label></li>
+          <li><label class="roman-check"><input type="checkbox" name="bUnfitFor" value="ii"> ii) any employment below ground; or</label></li>
+          <li><label class="roman-check"><input type="checkbox" name="bUnfitFor" value="iii"> iii) any employment or work <input type="text" class="blank" id="bOtherWork" placeholder="specify"></label></li>
+        </ol>
+      </div>
+
+      <div class="clause">
+        <p>
+          <button type="button" class="clause-tag" data-clause="c">c)</button>
+          Employee is suffering from <input type="text" class="blank wide" id="cCondition" placeholder="condition"> and should get the
+          disease/disability cured/controlled and be re-examined within a period of
+          <input type="number" class="blank narrow" id="cMonths" min="1" max="24" placeholder="months"> months. Employee shall appear for re-examination with the result
+          of the test of <input type="text" class="blank" id="cTest" placeholder="test"> and the opinion of the Specialist from
+          <input type="text" class="blank" id="cSpecialist" placeholder="specialist / hospital">. Employee may be
+          <span class="pairgroup" data-pair="cPermitted"><button type="button" data-val="Permitted">permitted</button>/<button type="button" data-val="Not Permitted">not permitted</button></span>
+          to carry on their duties during this period.
+        </p>
+      </div>
+
+      <p class="req-note no-print" id="fitnessRequiredNote">Mark the applicable outcome above (a, b or c) <span class="req">*</span></p>
+
+      <p class="paper-line">Remarks: <input type="text" class="blank xxwide" id="doctorRemarks" placeholder="e.g. Fit for given job"></p>
+
+      <div class="signblock">
+        <div class="photo-left">
+          <div class="photo-box" id="photoDrop" tabindex="0" role="button" aria-label="Upload employee photograph">
+            <img id="photoPreview" alt="" hidden>
+            <span id="photoPlaceholder">Affix Passport<br>Size Photograph</span>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" hidden>
+          <p class="field-row"><span class="field-label">Place:<span class="req">*</span></span><input type="text" class="blank" id="place1" value="Sandur" required></p>
+          <p class="field-row"><span class="field-label">Date:<span class="req">*</span></span><input type="date" class="blank" id="date1" required></p>
+        </div>
+
+        <div class="signoff">
+          <div class="sig-pad-wrap">
+            <canvas class="sig-pad" id="sigDoctor1" width="420" height="120"></canvas>
+            <button type="button" class="btn-text clear-sig no-print" data-target="sigDoctor1">Clear</button>
+          </div>
+          <p class="sig-caption">Signature &amp; name of the examining authority &amp; seal</p>
+          <p class="sig-name"><input type="text" class="blank" id="doctorName" placeholder="Dr. Full Name" required><span class="req">*</span></p>
+          <p class="sig-reg">Reg. No.<span class="req">*</span> <input type="text" class="blank" id="doctorReg" placeholder="e.g. KMC 59100" required></p>
+          <p class="seal-note no-print">Seal stays physical for this phase.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SHEET 2: REPORT OF THE EXAMINING AUTHORITY ---------- -->
+    <section class="sheet paper-sheet" id="sheet2" aria-labelledby="sheet2-title">
+      <div class="step-summaries no-print" id="summaries2"></div>
+
+      <h2 class="paper-h2" id="sheet2-title">Report of the examining authority</h2>
+      <p class="paper-subnote">(to be filled in for every medical examination whether initial or periodical or reexamination or after cure/control of disability).</p>
+
+      <p class="paper-line">Annexure to Certificate No. <span class="blank mono" id="annexCertNo"></span> as result of medical examination on <input type="date" class="blank" id="examDate" required><span class="req">*</span></p>
+      <p class="paper-line">Identification Mark<span class="req">*</span> <input type="text" class="blank xxwide" id="identificationMark" placeholder="e.g. Tattoo on right forearm" required></p>
+
+      <div class="thumb-block">
+        <div class="thumb-sig-wrap">
+          <label class="no-print">Left thumb impression</label>
+          <div class="thumb-box">
+            <canvas class="sig-pad thumb-pad" id="sigThumb" width="200" height="90"></canvas>
+          </div>
+          <button type="button" class="btn-text clear-sig no-print" data-target="sigThumb">Clear</button>
+        </div>
+        <div class="thumb-sig-wrap">
+          <label class="no-print">Signature of the candidate</label>
+          <div class="thumb-box">
+            <canvas class="sig-pad" id="sigCandidate" width="200" height="90"></canvas>
+          </div>
+          <button type="button" class="btn-text clear-sig no-print" data-target="sigCandidate">Clear</button>
+        </div>
+        <p class="sig-caption thumb-caption">Left thumb impression and Signature of the candidate</p>
+      </div>
+
+      <ol class="numbered">
+        <li>General development &ndash; <span class="pairgroup" data-pair="generalDev"><button type="button" data-val="Good" class="selected">Good</button>/<button type="button" data-val="Fair">Fair</button>/<button type="button" data-val="Poor">Poor</button></span></li>
+        <li>Height <input type="number" class="blank narrow" id="height" step="0.1" placeholder="cms"> Cms.</li>
+        <li>Weight <input type="number" class="blank narrow" id="weight" step="0.1" placeholder="kg"> kg.</li>
+        <li>
+          Eyes :
+          <ol class="roman plain">
+            <li>Visual acuity &ndash; Distant vision (with or without glasses): Right eye <input type="text" class="blank narrow" id="visionRight" placeholder="6/6"> Left eye <input type="text" class="blank narrow" id="visionLeft" placeholder="6/6"></li>
+            <li>any organic disease of eyes &ndash; <input type="text" class="blank" id="eyeOrganic" placeholder="NAD"></li>
+            <li>night blindness &ndash; <input type="text" class="blank" id="nightBlindness" placeholder="NAD"></li>
+            <li>Color blindness (to be tested in IME) &ndash; <input type="text" class="blank" id="colorBlindness" placeholder="NAD"></li>
+            <li>Squint &ndash; <input type="text" class="blank" id="squint" placeholder="NAD"></li>
+          </ol>
+        </li>
+        <li>
+          Ears :
+          <ol class="roman plain">
+            <li>Hearing: right ear <input type="text" class="blank narrow" id="hearingRight" placeholder="N"> Left ear <input type="text" class="blank narrow" id="hearingLeft" placeholder="N"></li>
+            <li>Any organic diseases &ndash; <input type="text" class="blank" id="earOrganic" placeholder="NAD"></li>
+            <li>Audiometry Findings :</li>
+          </ol>
+          <div class="table-scroll"><table class="paper-table">
+            <thead><tr><th>Conduction Type</th><th>Left Ear</th><th>Right Ear</th></tr></thead>
+            <tbody>
+              <tr><td>Ear Conduction</td><td><span class="pairgroup" data-pair="earL"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td><td><span class="pairgroup" data-pair="earR"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+              <tr><td>Bone Conduction</td><td><span class="pairgroup" data-pair="boneL"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td><td><span class="pairgroup" data-pair="boneR"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+            </tbody>
+          </table></div>
+          <p class="paper-line">Enclosed Audiometry Report: <span class="pairgroup" data-pair="enc-audiometry"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>
+          Respiratory system.
+          <p class="paper-line">Auscultatory Finding: <input type="text" class="blank" id="auscultatoryFinding" placeholder="e.g. NVBS +"></p>
+          <p class="paper-line">Chest measurement: i) after full inspiration <input type="number" class="blank narrow" id="chestInsp" step="0.1"> cms. &nbsp; ii) after full expiration <input type="number" class="blank narrow" id="chestExp" step="0.1"> cms.</p>
+          <p class="paper-subnote">Result of Lung Function Test (Spirometry)</p>
+          <div class="table-scroll"><table class="paper-table" id="spiroTable">
+            <thead><tr><th>Parameters</th><th>Predicted Value</th><th>Performed Value</th><th>% of Predicted</th></tr></thead>
+            <tbody>
+              <tr data-row="fvc"><td>Forced Vital Capacity (FVC)</td><td><input type="number" step="0.01" class="blank narrow predicted"></td><td><input type="number" step="0.01" class="blank narrow performed"></td><td class="pct">&mdash;</td></tr>
+              <tr data-row="fev1"><td>Forced Expiratory Volume 1 FEV1</td><td><input type="number" step="0.01" class="blank narrow predicted"></td><td><input type="number" step="0.01" class="blank narrow performed"></td><td class="pct">&mdash;</td></tr>
+              <tr data-row="ratio"><td>FEV1/FVC</td><td><input type="number" step="0.01" class="blank narrow predicted"></td><td><input type="number" step="0.01" class="blank narrow performed"></td><td class="pct">&mdash;</td></tr>
+              <tr data-row="pef"><td>Peak Expiratory Flow</td><td><input type="number" step="0.01" class="blank narrow predicted"></td><td><input type="number" step="0.01" class="blank narrow performed"></td><td class="pct">&mdash;</td></tr>
+            </tbody>
+          </table></div>
+          <p class="paper-line">Enclose Spirometry Report: <span class="pairgroup" data-pair="enc-spirometry"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>
+          Circulatory system:
+          <p class="paper-line">i) Blood Pressure <input type="text" class="blank narrow" id="bp" placeholder="130/80"> mmHg &nbsp; ii) Pulse <input type="number" class="blank narrow" id="pulse" placeholder="80"> /M</p>
+          <p class="paper-subnote">Cardiological Assessment</p>
+          <div class="table-scroll"><table class="paper-table">
+            <tbody>
+              <tr><td rowspan="3">Auscultation</td><td>S1</td><td><input type="text" class="blank" id="s1"></td></tr>
+              <tr><td>S2</td><td><input type="text" class="blank" id="s2"></td></tr>
+              <tr><td>Additional Sound</td><td><input type="text" class="blank" id="additionalSound"></td></tr>
+              <tr><td colspan="2">Electrocardiograph (12 leads) findings:</td><td><span class="pairgroup" data-pair="ecg"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+              <tr><td colspan="2">Echocardiography finding (to be tested in IME)</td><td><span class="pairgroup" data-pair="echo"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+            </tbody>
+          </table></div>
+          <p class="paper-line">Enclose ECG: <span class="pairgroup" data-pair="enc-ecg"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+          <p class="paper-line">Enclose Echocardiography report: <span class="pairgroup" data-pair="enc-echo"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>
+          Abdomen:
+          <p class="paper-line">Tenderness &ndash; <input type="text" class="blank" id="tenderness" placeholder="NAD"> &nbsp; Liver &ndash; <input type="text" class="blank" id="liver" placeholder="NAD"> &nbsp; Spleen &ndash; <input type="text" class="blank" id="spleen" placeholder="NAD"> &nbsp; Tumour &ndash; <input type="text" class="blank" id="tumour" placeholder="NAD"></p>
+          <p class="paper-line">Ultrasonography of Whole Abdomen (to be tested in IME): <span class="pairgroup" data-pair="ultrasonography"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></p>
+          <p class="paper-line">Enclose Ultrasonography report: <span class="pairgroup" data-pair="enc-usg"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>
+          Nervous system:
+          <p class="paper-line">History of fits or epilepsy &ndash; <input type="text" class="blank" id="fits" placeholder="NAD"> &nbsp; Paralysis &ndash; <input type="text" class="blank" id="paralysis" placeholder="NAD"> &nbsp; Mental health &ndash; <input type="text" class="blank" id="mentalHealth" placeholder="NAD"></p>
+          <p class="paper-subnote">Neurological Assessment</p>
+          <div class="table-scroll"><table class="paper-table">
+            <thead><tr><th>Findings</th><th>Normal/Abnormal</th></tr></thead>
+            <tbody>
+              <tr><td>Superficial Reflexes</td><td><span class="pairgroup" data-pair="superficial"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+              <tr><td>Deep Reflexes</td><td><span class="pairgroup" data-pair="deep"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+              <tr><td>Peripheral Circulation</td><td><span class="pairgroup" data-pair="peripheral"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+              <tr><td>Vibrational Syndromes</td><td><span class="pairgroup" data-pair="vibrational"><button type="button" data-val="Normal">Normal</button>/<button type="button" data-val="Abnormal">Abnormal</button></span></td></tr>
+            </tbody>
+          </table></div>
+          <p class="paper-subnote">Special Tests for Manganese exposure</p>
+          <div class="table-scroll"><table class="paper-table">
+            <tbody>
+              <tr><td>Behavioral Disturbances</td><td><span class="pairgroup" data-pair="behavioral"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Not Present">Not Present</button></span></td></tr>
+              <tr><td>Neurological &ndash; Speech Defect</td><td><span class="pairgroup" data-pair="speech"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Not Present">Not Present</button></span></td></tr>
+              <tr><td>Neurological &ndash; Tremor</td><td><span class="pairgroup" data-pair="tremor"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Not Present">Not Present</button></span></td></tr>
+              <tr><td>Neurological &ndash; Adiadocokinesia</td><td><span class="pairgroup" data-pair="adiadocokinesia"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Not Present">Not Present</button></span></td></tr>
+              <tr><td>Neurological &ndash; Emotional Changes</td><td><span class="pairgroup" data-pair="emotional"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Not Present">Not Present</button></span></td></tr>
+            </tbody>
+          </table></div>
+        </li>
+        <li>Locomotory system &ndash; <input type="text" class="blank" id="locomotor" placeholder="NAD"></li>
+        <li>Skin &ndash; <input type="text" class="blank" id="skin" placeholder="NAD"></li>
+        <li>Hydrocele &ndash; <input type="text" class="blank" id="hydrocele" placeholder="NAD"></li>
+        <li>Hernia &ndash; <input type="text" class="blank" id="hernia" placeholder="NAD"></li>
+        <li>Teeth &ndash; <input type="text" class="blank" id="teeth" placeholder="NAD"></li>
+        <li>Speech &ndash; <input type="text" class="blank" id="speech" placeholder="NAD"></li>
+      </ol>
+    </section>
+
+    <!-- ---------- SHEET 3: INVESTIGATIONS & SIGN-OFF ---------- -->
+    <section class="sheet paper-sheet" id="sheet3" aria-labelledby="sheet3-title">
+      <div class="step-summaries no-print" id="summaries3"></div>
+
+      <ol class="numbered" start="16" id="sheet3-title">
+        <li>
+          Pathological Investigations:
+          <div class="table-scroll"><table class="paper-table">
+            <thead><tr><th>Sl. No.</th><th>Tests</th><th>Findings</th></tr></thead>
+            <tbody id="pathologyBody"></tbody>
+          </table></div>
+          <p class="paper-line">Enclose all Investigation Reports: <span class="pairgroup" data-pair="enc-investigations"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>
+          Skiagram of chest (X-Ray)
+          <p class="paper-subnote">ILO Classification of Chest Radiograph:</p>
+          <div class="table-scroll"><table class="paper-table">
+            <thead><tr><th>Profusion of Pneumoconiosis opacities</th><th>Grades</th><th>Types</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="pairgroup" data-pair="profusion"><button type="button" data-val="Present">Present</button>/<button type="button" data-val="Absent">Absent</button></span></td>
+                <td><input type="text" class="blank narrow" id="iloGrade" placeholder="e.g. 1/0"></td>
+                <td><input type="text" class="blank narrow" id="iloType" placeholder="e.g. p/q"></td>
+              </tr>
+            </tbody>
+          </table></div>
+          <p class="paper-line">Enclose Chest Radiograph: <span class="pairgroup" data-pair="enc-xray"><button type="button" data-val="Enclosed">Enclosed</button>/<button type="button" data-val="Not Enclosed">Not Enclosed</button></span></p>
+        </li>
+        <li>Any other abnormality. <input type="text" class="blank wide" id="otherAbnormality"></li>
+        <li>Any other test considered necessary by the examining authority. <input type="text" class="blank wide" id="otherTest"></li>
+        <li>Any opinion of specialist considered necessary. <input type="text" class="blank wide" id="specialistOpinion"></li>
+      </ol>
+
+      <div class="attachments-block no-print">
+        <h3>Supporting Attachments</h3>
+        <p class="card-note">Uploaded files are stored in a non-editable format per Government retention requirements.</p>
+        <div class="attachment-grid" id="attachmentGrid"></div>
+      </div>
+
+      <div class="signline">
+        <div class="signline-left">
+          <p class="field-row"><span class="field-label">Place:<span class="req">*</span></span><input type="text" class="blank" id="place3" value="Sandur" required></p>
+          <p class="field-row"><span class="field-label">Date:<span class="req">*</span></span><input type="date" class="blank" id="date3" required></p>
+        </div>
+        <div class="signline-right">
+          <div class="sig-pad-wrap">
+            <canvas class="sig-pad" id="sigDoctor3" width="420" height="120"></canvas>
+            <button type="button" class="btn-text clear-sig no-print" data-target="sigDoctor3">Clear</button>
+          </div>
+          <p class="sig-caption">Signature &amp; name of the examining authority &amp; seal</p>
+          <p class="sig-name" id="doctorName3Echo"></p>
+          <p class="sig-reg" id="doctorReg3Echo"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="form-actions no-print">
+      <div class="footer-actions">
+        <button class="btn btn-outline" id="cancelBtn" type="button">Cancel</button>
+        <button class="btn btn-outline-accent" id="prevBtn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Previous
+        </button>
+        <button class="btn btn-outline-accent" id="nextBtn" type="button">
+          Next
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn btn-outline-accent" id="printBtn" type="button">Print / Export PDF</button>
+        <button class="btn btn-outline-accent" id="saveDraftBtn" type="button">Save as Draft</button>
+        <button class="btn btn-primary" id="submitBtn" type="button" hidden>Submit for Certification</button>
+      </div>
+    </div>
+
+  </main>
+
+  </div>
+
+  <!-- ============================= FOOTER ============================= -->
+  <div class="site-footer no-print">
+    Copyright &copy; 2026 <span>The SANDUR MANGANESE &amp; IRON ORES LIMITED</span> - ALL RIGHTS RESERVED
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/header.js"></script>
+<script src="assets/js/history-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
