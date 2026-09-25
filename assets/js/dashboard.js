@@ -19,16 +19,16 @@
    * ------------------------------------------------------------------- */
 
   const SEED_RECORDS = [
-    { id: 1, certNo: 'SMC-00061', employeeName: 'Basavaraj H. Naik', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 41, examDate: '2026-09-18', status: 'Pending' },
-    { id: 2, certNo: 'SMC-00060', employeeName: 'Chandrashekar M.', mineName: 'Deogiri Manganese Mine', personnelType: 'Employee', examType: 'Initial', age: 29, examDate: '2026-09-16', status: 'Pending' },
-    { id: 3, certNo: 'SMC-00059', employeeName: 'Iqbal Ahmed', mineName: 'Vyasanakere Mine', personnelType: 'Contractor', examType: 'Initial', age: 34, examDate: '2026-09-14', status: 'Pending' },
-    { id: 4, certNo: 'SMC-00058', employeeName: 'K. Ravindra Shetty', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 47, examDate: '2026-09-10', status: 'Pending' },
-    { id: 5, certNo: 'SMC-00057', employeeName: 'Manjunath Koli', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 26, examDate: '2026-09-08', status: 'Pending' },
-    { id: 6, certNo: 'SMC-00056', employeeName: 'Praveen Kumar B.', mineName: 'Yeshwantnagar Unit', personnelType: 'Employee', examType: 'Periodical', age: 52, examDate: '2026-09-05', status: 'Pending' },
-    { id: 7, certNo: 'SMC-00055', employeeName: 'Ravi Teja Pujari', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 38, examDate: '2026-09-02', status: 'Pending' },
-    { id: 8, certNo: 'SMC-00054', employeeName: 'Somashekar Hadapad', mineName: 'Deogiri Manganese Mine', personnelType: 'Contractor', examType: 'Initial', age: 31, examDate: '2026-08-29', status: 'Pending' },
-    { id: 9, certNo: 'SMC-00053', employeeName: 'Suresh Babu G.', mineName: 'Vyasanakere Mine', personnelType: 'Employee', examType: 'Periodical', age: 44, examDate: '2026-08-25', status: 'Pending' },
-    { id: 10, certNo: 'SMC-00052', employeeName: 'Venkatesh Halli', mineName: 'Narihalla Mine', personnelType: 'Contractor', examType: 'Initial', age: 27, examDate: '2026-08-21', status: 'Pending' },
+    { id: 1, certNo: 'SMC-00061', employeeName: 'Basavaraj H. Naik', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 41, examDate: '2026-09-18', status: 'Submitted' },
+    { id: 2, certNo: 'SMC-00060', employeeName: 'Chandrashekar M.', mineName: 'Deogiri Manganese Mine', personnelType: 'Employee', examType: 'Initial', age: 29, examDate: '2026-09-16', status: 'Submitted' },
+    { id: 3, certNo: 'SMC-00059', employeeName: 'Iqbal Ahmed', mineName: 'Vyasanakere Mine', personnelType: 'Contractor', examType: 'Initial', age: 34, examDate: '2026-09-14', status: 'Submitted' },
+    { id: 4, certNo: 'SMC-00058', employeeName: 'K. Ravindra Shetty', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 47, examDate: '2026-09-10', status: 'Submitted' },
+    { id: 5, certNo: 'SMC-00057', employeeName: 'Manjunath Koli', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 26, examDate: '2026-09-08', status: 'Submitted' },
+    { id: 6, certNo: 'SMC-00056', employeeName: 'Praveen Kumar B.', mineName: 'Yeshwantnagar Unit', personnelType: 'Employee', examType: 'Periodical', age: 52, examDate: '2026-09-05', status: 'Submitted' },
+    { id: 7, certNo: 'SMC-00055', employeeName: 'Ravi Teja Pujari', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 38, examDate: '2026-09-02', status: 'Submitted' },
+    { id: 8, certNo: 'SMC-00054', employeeName: 'Somashekar Hadapad', mineName: 'Deogiri Manganese Mine', personnelType: 'Contractor', examType: 'Initial', age: 31, examDate: '2026-08-29', status: 'Submitted' },
+    { id: 9, certNo: 'SMC-00053', employeeName: 'Suresh Babu G.', mineName: 'Vyasanakere Mine', personnelType: 'Employee', examType: 'Periodical', age: 44, examDate: '2026-08-25', status: 'Submitted' },
+    { id: 10, certNo: 'SMC-00052', employeeName: 'Venkatesh Halli', mineName: 'Narihalla Mine', personnelType: 'Contractor', examType: 'Initial', age: 27, examDate: '2026-08-21', status: 'Submitted' },
 
     { id: 11, certNo: null, employeeName: 'Anand Kumar Reddy', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Employee', examType: 'Periodical', age: 36, examDate: '2026-09-20', status: 'Draft' },
     { id: 12, certNo: null, employeeName: 'Deepak S. Patil', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Contractor', examType: 'Initial', age: 24, examDate: '2026-09-19', status: 'Draft' },
@@ -36,16 +36,16 @@
     { id: 14, certNo: null, employeeName: 'Harish Chandra', mineName: 'Deogiri Manganese Mine', personnelType: 'Employee', examType: 'Initial', age: 33, examDate: '2026-09-15', status: 'Draft' },
     { id: 15, certNo: null, employeeName: 'Imran Sheikh', mineName: 'Vyasanakere Mine', personnelType: 'Contractor', examType: 'Initial', age: 30, examDate: '2026-09-13', status: 'Draft' },
 
-    { id: 16, certNo: 'SMC-00051', employeeName: 'Basappa Talwar', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 45, examDate: '2026-08-18', status: 'Approved' },
-    { id: 17, certNo: 'SMC-00050', employeeName: 'Chetan Kumar', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 28, examDate: '2026-08-14', status: 'Approved' },
-    { id: 18, certNo: 'SMC-00049', employeeName: 'Dinesh Rathod', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 39, examDate: '2026-08-10', status: 'Approved' },
-    { id: 19, certNo: 'SMC-00048', employeeName: 'Eshwar Gouda', mineName: 'Deogiri Manganese Mine', personnelType: 'Employee', examType: 'Initial', age: 32, examDate: '2026-08-06', status: 'Approved' },
-    { id: 20, certNo: 'SMC-00047', employeeName: 'Feroz Khan', mineName: 'Vyasanakere Mine', personnelType: 'Contractor', examType: 'Initial', age: 35, examDate: '2026-08-02', status: 'Approved' },
-    { id: 21, certNo: 'SMC-00046', employeeName: 'Gopal Krishna', mineName: 'Yeshwantnagar Unit', personnelType: 'Employee', examType: 'Periodical', age: 48, examDate: '2026-07-29', status: 'Approved' },
-    { id: 22, certNo: 'SMC-00045', employeeName: 'Harsha Vardhan', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 41, examDate: '2026-07-25', status: 'Approved' },
+    { id: 16, certNo: 'SMC-00051', employeeName: 'Basappa Talwar', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 45, examDate: '2026-08-18', status: 'Submitted' },
+    { id: 17, certNo: 'SMC-00050', employeeName: 'Chetan Kumar', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 28, examDate: '2026-08-14', status: 'Submitted' },
+    { id: 18, certNo: 'SMC-00049', employeeName: 'Dinesh Rathod', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 39, examDate: '2026-08-10', status: 'Submitted' },
+    { id: 19, certNo: 'SMC-00048', employeeName: 'Eshwar Gouda', mineName: 'Deogiri Manganese Mine', personnelType: 'Employee', examType: 'Initial', age: 32, examDate: '2026-08-06', status: 'Submitted' },
+    { id: 20, certNo: 'SMC-00047', employeeName: 'Feroz Khan', mineName: 'Vyasanakere Mine', personnelType: 'Contractor', examType: 'Initial', age: 35, examDate: '2026-08-02', status: 'Submitted' },
+    { id: 21, certNo: 'SMC-00046', employeeName: 'Gopal Krishna', mineName: 'Yeshwantnagar Unit', personnelType: 'Employee', examType: 'Periodical', age: 48, examDate: '2026-07-29', status: 'Submitted' },
+    { id: 22, certNo: 'SMC-00045', employeeName: 'Harsha Vardhan', mineName: 'Narihalla Mine', personnelType: 'Employee', examType: 'Periodical', age: 41, examDate: '2026-07-25', status: 'Submitted' },
 
-    { id: 23, certNo: 'SMC-00044', employeeName: 'Imtiaz Ali', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 23, examDate: '2026-07-20', status: 'Rejected' },
-    { id: 24, certNo: 'SMC-00043', employeeName: 'Jagadish Rao', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 55, examDate: '2026-07-16', status: 'Rejected' },
+    { id: 23, certNo: 'SMC-00044', employeeName: 'Imtiaz Ali', mineName: 'Sandur Manganese Mine Complex', personnelType: 'Contractor', examType: 'Initial', age: 23, examDate: '2026-07-20', status: 'Submitted' },
+    { id: 24, certNo: 'SMC-00043', employeeName: 'Jagadish Rao', mineName: 'Ramgad Iron Ore Mine', personnelType: 'Employee', examType: 'Periodical', age: 55, examDate: '2026-07-16', status: 'Submitted' },
   ];
 
   function loadRecords() {
@@ -54,7 +54,11 @@
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length) return parsed;
+        // records saved by earlier versions used Pending / Approved / Rejected;
+        // there are now only two statuses
+        if (Array.isArray(parsed) && parsed.length) {
+          return parsed.map((r) => ({ ...r, status: r.status === 'Draft' ? 'Draft' : 'Submitted' }));
+        }
       } catch (e) { /* ignore */ }
     }
     return SEED_RECORDS.map((r) => ({ ...r }));
@@ -99,7 +103,7 @@
 
   function statusCounts() {
     const searched = records.filter(matchesSearch);
-    const counts = { All: searched.length, Draft: 0, Pending: 0, Approved: 0, Rejected: 0 };
+    const counts = { All: searched.length, Draft: 0, Submitted: 0 };
     searched.forEach((r) => { counts[r.status] = (counts[r.status] || 0) + 1; });
     return counts;
   }
@@ -117,34 +121,18 @@
   function statusPillClass(status) {
     return {
       Draft: 'pill-draft',
-      Pending: 'pill-pending',
-      Approved: 'pill-approved',
-      Rejected: 'pill-rejected',
+      Submitted: 'pill-submitted',
     }[status] || '';
   }
 
   const ICONS = {
     view: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg>',
-    approve: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.8"/><path d="m7.5 12.5 3 3 6-6.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    reject: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 8.5 7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
     edit: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 20h4L19.5 8.5a2 2 0 0 0 0-2.8l-1.2-1.2a2 2 0 0 0-2.8 0L4 16v4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
-    print: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2M6 14h12v7H6v-7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
   };
 
   function iconsForRow(r) {
     if (r.status === 'Draft') {
       return `<button type="button" class="icon-btn icon-btn--edit" data-action="edit" data-id="${r.id}" title="Continue draft">${ICONS.edit}</button>`;
-    }
-    if (r.status === 'Pending') {
-      return `
-        <button type="button" class="icon-btn icon-btn--approve" data-action="approve" data-id="${r.id}" title="Approve">${ICONS.approve}</button>
-        <button type="button" class="icon-btn icon-btn--reject" data-action="reject" data-id="${r.id}" title="Reject">${ICONS.reject}</button>
-        <button type="button" class="icon-btn icon-btn--view" data-action="view" data-id="${r.id}" title="View">${ICONS.view}</button>`;
-    }
-    if (r.status === 'Approved') {
-      return `
-        <button type="button" class="icon-btn icon-btn--view" data-action="view" data-id="${r.id}" title="View">${ICONS.view}</button>
-        <button type="button" class="icon-btn icon-btn--print" data-action="print" data-id="${r.id}" title="Print / Export">${ICONS.print}</button>`;
     }
     return `<button type="button" class="icon-btn icon-btn--view" data-action="view" data-id="${r.id}" title="View">${ICONS.view}</button>`;
   }
@@ -188,7 +176,7 @@
       <td>${r.examType}</td>
       <td>${r.age}</td>
       <td>${formatDate(r.examDate)}</td>
-      <td>${daysPending(r.examDate)}</td>
+      <td>${r.status === 'Draft' ? daysPending(r.examDate) : '&mdash;'}</td>
       <td><span class="status-pill ${statusPillClass(r.status)}">${r.status}</span></td>
       <td class="row-actions">${iconsForRow(r)}</td>
     </tr>`;
@@ -271,22 +259,9 @@
       if (!record) return;
 
       const action = btn.dataset.action;
-      if (action === 'approve') {
-        record.status = 'Approved';
-        saveRecords();
-        showToast(`${record.employeeName}'s record approved`);
-        renderTable();
-      } else if (action === 'reject') {
-        record.status = 'Rejected';
-        saveRecords();
-        showToast(`${record.employeeName}'s record rejected`);
-        renderTable();
-      } else if (action === 'edit' || action === 'view') {
+      if (action === 'edit' || action === 'view') {
         showToast('Opening record in the Form 9 workspace…');
         window.location.href = `index.html?id=${record.id}${action === 'view' ? '&mode=view' : ''}`;
-      } else if (action === 'print') {
-        showToast('Opening record for print / export…');
-        window.location.href = `index.html?id=${record.id}`;
       }
     });
   }

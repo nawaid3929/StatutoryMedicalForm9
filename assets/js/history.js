@@ -17,7 +17,7 @@
     setTimeout(() => toast.classList.remove('show'), 2600);
   }
 
-  const PILL = { Draft: 'pill-draft', Pending: 'pill-pending', Approved: 'pill-approved', Rejected: 'pill-rejected' };
+  const PILL = { Draft: 'pill-draft', Submitted: 'pill-submitted' };
 
   function renderPerson(person) {
     const total = person.records.length;

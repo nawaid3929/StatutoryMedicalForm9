@@ -45,7 +45,7 @@
             </div>
             <div class="profile-card-body">
               <strong class="profile-card-name">SharePoint Admin</strong>
-              <span class="profile-card-email">sharepointadmin@manipalhospitals.com</span>
+              <span class="profile-card-email">SharepointAdmin@sandurgroup.com</span>
             </div>
           </div>
         </div>
@@ -116,6 +116,13 @@
             <option value="Contractor">Contractor</option>
           </select>
         </label>
+        <label>Type of exam
+          <select id="examTypeSelect">
+            <option value="Initial">Initial</option>
+            <option value="Periodical">Periodical</option>
+            <option value="ReMedical">ReMedical</option>
+          </select>
+        </label>
         <label>Aadhaar No.
           <input type="text" id="aadhaarNo" inputmode="numeric" maxlength="14" placeholder="XXXX XXXX XXXX" autocomplete="off">
         </label>
@@ -130,7 +137,7 @@
         <input type="text" class="blank xwide" id="designation" placeholder="designation"> in
         <input type="text" class="blank" id="mineName" placeholder="mine name"> mine, Employee number
         <input type="text" class="blank" id="employeeNo" placeholder="emp. no."> has been examined for an
-        <span class="pairgroup" data-pair="examType"><button type="button" data-val="Initial" class="selected">Initial</button>/<button type="button" data-val="Periodical">Periodical</button></span>
+        <span class="pairgroup" data-pair="examType"><button type="button" data-val="Initial" class="selected">Initial</button>/<button type="button" data-val="Periodical">Periodical</button>/<button type="button" data-val="ReMedical">ReMedical</button></span>
         Medical Examination. Employee appears to be
         <input type="number" class="blank narrow" id="age" min="14" max="80" placeholder="age"> years of age. The findings of the examining authority are given in the attached sheet.
         <br>
@@ -365,6 +372,7 @@
         <h3>Supporting Attachments</h3>
         <p class="card-note">Uploaded files are stored in a non-editable format per Government retention requirements.</p>
         <div class="attachment-grid" id="attachmentGrid"></div>
+        <div class="attachment-grid attachment-grid--others" id="attachmentGridOthers"></div>
       </div>
 
       <div class="signline">

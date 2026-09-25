@@ -28,8 +28,11 @@
 
   const ATTACHMENTS = [
     'X-Ray (Chest)', 'ECG', 'Echocardiography', 'Audiometry',
-    'Spirometry', 'Ultrasonography', 'Pathology Lab Reports',
+    'Spirometry', 'Ultrasonography', 'Pathology Lab Reports', 'Eye Test',
   ];
+
+  // Free-form uploads for anything not covered above; shown on their own row.
+  const OTHER_ATTACHMENTS = ['Other 1', 'Other 2', 'Other 3', 'Other 4', 'Other 5'];
 
   const state = { step: 1 };
 
@@ -108,16 +111,8 @@
     if (record.examType) selectPair('examType', record.examType);
     setValue('age', record.age);
 
-    if (record.status === 'Rejected') {
-      selectClause('b');
-      setValue('bCondition', 'Uncontrolled hypertension');
-      const unfit = $('input[name="bUnfitFor"][value="i"]');
-      if (unfit) unfit.checked = true;
-      setValue('doctorRemarks', 'Not fit for employment in mines at this time');
-    } else {
-      selectClause('a');
-      setValue('doctorRemarks', 'Fit for given job');
-    }
+    selectClause('a');
+    setValue('doctorRemarks', 'Fit for given job');
 
     setValue('place1', 'Sandur');
     setValue('date1', record.examDate);
@@ -225,6 +220,14 @@
     });
   }
 
+  // "Type of exam" dropdown drives the Initial / Periodical / ReMedical
+  // choice in the certificate sentence (and the sentence drives it back).
+  function initExamTypeSelect() {
+    const sel = $('#examTypeSelect');
+    const group = $('.pairgroup[data-pair="examType"]');
+    sel.addEventListener('change', () => applyPairSelection(group, sel.value));
+  }
+
   function initPairgroups() {
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.pairgroup button[data-val]');
@@ -233,6 +236,10 @@
       applyPairSelection(group, btn.dataset.val);
 
       const key = group.dataset.pair;
+      if (key === 'examType') {
+        const sel = $('#examTypeSelect');
+        if (sel) sel.value = btn.dataset.val;
+      }
       if (key === 'salutation') {
         const mirror = $('.pairgroup[data-pair="salutation2"]');
         if (mirror) applyPairSelection(mirror, btn.dataset.val);
@@ -324,6 +331,8 @@
     state.step = n;
     $$('.sheet').forEach((s) => s.classList.remove('active'));
     $(`#sheet${n}`).classList.add('active');
+    // size any pad that just became visible (does nothing once a pad is sized)
+    signaturePadSetups.forEach((fn) => fn());
 
     $$('.step').forEach((s) => {
       const idx = Number(s.dataset.step);
@@ -574,15 +583,18 @@
   }
 
   function buildAttachmentGrid() {
-    const grid = $('#attachmentGrid');
-    grid.innerHTML = ATTACHMENTS.map((name, i) => `
+    const tileHtml = (name, i) => `
       <div class="attachment-tile" data-idx="${i}" tabindex="0" role="button" aria-label="Upload ${name}">
         <span class="a-name">${name}</span>
         <span class="a-status">Click to upload</span>
       </div>
-    `).join('');
+    `;
+    const grid = $('#attachmentGrid');
+    const othersGrid = $('#attachmentGridOthers');
+    grid.innerHTML = ATTACHMENTS.map(tileHtml).join('');
+    othersGrid.innerHTML = OTHER_ATTACHMENTS.map((name, i) => tileHtml(name, ATTACHMENTS.length + i)).join('');
 
-    $$('.attachment-tile', grid).forEach((tile) => {
+    [...$$('.attachment-tile', grid), ...$$('.attachment-tile', othersGrid)].forEach((tile) => {
       tile.addEventListener('click', () => {
         const input = document.createElement('input');
         input.type = 'file';
@@ -636,6 +648,8 @@
    * Signature / thumb-impression capture pads
    * ------------------------------------------------------------------- */
 
+  const signaturePadSetups = [];
+
   function initSignaturePads() {
     $$('.sig-pad').forEach((canvas) => {
       const ctx = canvas.getContext('2d');
@@ -646,6 +660,7 @@
       // canvas then would leave it permanently unusable. Retry via
       // ResizeObserver until the pad actually has layout size, then stop.
       const setup = () => {
+        if (sized) return;
         const rect = canvas.getBoundingClientRect();
         if (!rect.width || !rect.height) return;
         const ratio = window.devicePixelRatio || 1;
@@ -658,6 +673,7 @@
         sized = true;
       };
       setup();
+      signaturePadSetups.push(setup);
 
       if (!sized) {
         const observer = new ResizeObserver(() => {
@@ -779,6 +795,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initCertNumber();
     initPairgroups();
+    initExamTypeSelect();
     initClauseTags();
     initEchoes();
     initPersonLookup();
